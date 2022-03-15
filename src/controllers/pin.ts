@@ -1,4 +1,4 @@
-import { Context } from "https://deno.land/x/grammy/mod.ts";
+import { Context } from "../packages/grammy.ts";
 
 const pin = async (ctx: Context) => {
   const messageId = ctx.message!.reply_to_message!.message_id;

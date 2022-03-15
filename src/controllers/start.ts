@@ -1,4 +1,4 @@
-import { Context } from "https://deno.land/x/grammy/mod.ts";
+import { Context } from "../packages/grammy.ts";
 
 const start = (ctx: Context) => {
   ctx.reply("Hello, world!");

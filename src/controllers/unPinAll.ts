@@ -1,4 +1,4 @@
-import { Context } from "https://deno.land/x/grammy/mod.ts";
+import { Context } from "../packages/grammy.ts";
 
 const unPinAll = async (ctx: Context) => {
   await ctx.unpinAllChatMessages();

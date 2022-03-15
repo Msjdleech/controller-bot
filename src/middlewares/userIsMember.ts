@@ -1,4 +1,4 @@
-import { Context, NextFunction } from "https://deno.land/x/grammy/mod.ts";
+import { Context, NextFunction } from "../packages/grammy.ts";
 
 const userIsMember = async (ctx: Context, next: NextFunction) => {
   const { status } = await ctx.getChatMember(

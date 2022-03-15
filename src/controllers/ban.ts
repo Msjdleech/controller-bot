@@ -1,4 +1,4 @@
-import { Context } from "https://deno.land/x/grammy/mod.ts";
+import { Context } from "../packages/grammy.ts";
 
 const ban = async (ctx: Context) => {
   const user = ctx.message!.reply_to_message!.from;
