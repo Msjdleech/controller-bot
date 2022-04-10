@@ -1,5 +1,5 @@
 import { bot } from "../core/bot.ts";
-import { isBotAdmin, isWriterAdmin } from "../middlewares/index.ts";
+import { isBotAdmin, isNotWriterAdmin } from "../middlewares/index.ts";
 import { deleteMessage } from "../controllers/deleteMessage.ts";
 
-bot.on("::url", isBotAdmin, deleteMessage);
+bot.on("::url", isBotAdmin, isNotWriterAdmin, deleteMessage);
