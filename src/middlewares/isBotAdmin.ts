@@ -1,6 +1,6 @@
 import { Context, NextFunction } from "../packages/grammy.ts";
 
-const botIsAdmin = async (ctx: Context, next: NextFunction) => {
+const isBotAdmin = async (ctx: Context, next: NextFunction) => {
   const bot = await ctx.getChatMember(ctx.me.id);
   if (bot.status === "administrator") {
     return (bot.can_manage_chat &&
@@ -17,4 +17,4 @@ const botIsAdmin = async (ctx: Context, next: NextFunction) => {
   return;
 };
 
-export { botIsAdmin };
+export { isBotAdmin };

@@ -1,19 +1,19 @@
 import { bot } from "../core/bot.ts";
 import { mute } from "../controllers/index.ts";
 import {
-  botIsAdmin,
-  isGroup,
-  isReply,
-  userIsMember,
-  writerIsAdmin,
+  isBotAdmin,
+  isChatGroup,
+  hasReply,
+  isUserMember,
+  isWriterAdmin,
 } from "../middlewares/index.ts";
 
 bot.command(
   "mute",
-  isGroup,
-  botIsAdmin,
-  writerIsAdmin,
-  isReply,
-  userIsMember,
+  isChatGroup,
+  isBotAdmin,
+  isWriterAdmin,
+  hasReply,
+  isUserMember,
   mute,
 );

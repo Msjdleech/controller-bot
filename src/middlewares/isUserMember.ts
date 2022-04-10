@@ -1,6 +1,6 @@
 import { Context, NextFunction } from "../packages/grammy.ts";
 
-const userIsMember = async (ctx: Context, next: NextFunction) => {
+const isUserMember = async (ctx: Context, next: NextFunction) => {
   const { status } = await ctx.getChatMember(
     ctx.message!.reply_to_message!.from!.id,
   );
@@ -8,4 +8,4 @@ const userIsMember = async (ctx: Context, next: NextFunction) => {
   return;
 };
 
-export { userIsMember };
+export { isUserMember };
