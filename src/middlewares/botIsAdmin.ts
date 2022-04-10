@@ -1,16 +1,16 @@
 import { Context, NextFunction } from "../packages/grammy.ts";
 
 const botIsAdmin = async (ctx: Context, next: NextFunction) => {
-  const admins = await ctx.getChatMember(ctx.me.id);
-  if (admins.status === "administrator") {
-    return (admins.can_manage_chat &&
-      admins.can_change_info &&
-      admins.can_delete_messages &&
-      admins.can_invite_users &&
-      admins.can_restrict_members &&
-      admins.can_pin_messages &&
-      admins.can_promote_members &&
-      admins.can_manage_voice_chats)
+  const bot = await ctx.getChatMember(ctx.me.id);
+  if (bot.status === "administrator") {
+    return (bot.can_manage_chat &&
+      bot.can_change_info &&
+      bot.can_delete_messages &&
+      bot.can_invite_users &&
+      bot.can_restrict_members &&
+      bot.can_pin_messages &&
+      bot.can_promote_members &&
+      bot.can_manage_voice_chats)
       ? await next()
       : null;
   }
